@@ -19,7 +19,8 @@ plot6 <- function() {
     geom_text(aes(label=prettyNum(Emission, format="f", digits=5), vjust=-.2, fontface="bold")) +
     scale_x_continuous(limits=c(1997, 2010), breaks=c(1999, 2002, 2005, 2008), labels=c(1999, 2002, 2005, 2008)) +
     ylab("Total PM2.5 emission") +
-    xlab("Year")
+    xlab("Year") + 
+    ggtitle(expression("Motor vehicle emission comparison\nin Baltimore and Los Angeles County"))
   print(q)
   
   dev.print(png, file = "plot6.PNG"

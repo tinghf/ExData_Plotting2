@@ -9,7 +9,13 @@ plot3 <- function() {
   
   library("ggplot2")
   
-  g <- ggplot(allEmissions) + aes(x=year, y=x, colour=type) + geom_bar(stat="identity", width=2.5) + geom_text(aes(label=prettyNum(x, format="f", digits=5), vjust=-.2, fontface="bold")) + facet_wrap(~type) + scale_x_continuous(limits=c(1997, 2010), breaks=c(1999, 2002, 2005, 2008), labels=c(1999, 2002, 2005, 2008)) + ylab("Total PM2.5 emission per source in Baltimore City (tons)") + xlab("Year")
+  g <- ggplot(allEmissions) + 
+    aes(x=year, y=x, colour=type) + 
+    geom_bar(stat="identity", width=2.5) + 
+    geom_text(aes(label=prettyNum(x, format="f", digits=5), vjust=-.2, fontface="bold")) + 
+    facet_wrap(~type) + scale_x_continuous(limits=c(1997, 2010), breaks=c(1999, 2002, 2005, 2008), labels=c(1999, 2002, 2005, 2008)) + 
+    ylab("Total PM2.5 emission per source in Baltimore City (tons)") + xlab("Year") + 
+    ggtitle(expression("PM"[2.5]*" emissions in Baltimore City\n by various source types"))
   print(g)
   
   dev.print(png, file = "plot3.PNG", 

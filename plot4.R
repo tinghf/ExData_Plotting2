@@ -13,7 +13,7 @@ plot4 <- function() {
   
   bp<-barplot(
     as.integer(allEmissions$x/1000),
-    main = "Total PM2.5 emission from coal combustion-related sources by year (US)",
+    main = "Total PM2.5 emission from \ncoal combustion-related sources by year (US)",
     ylab="PM2.5 Emission (kilotons)",
     xlab="Years",
     names = c("1999", "2002", "2005", "2008")
