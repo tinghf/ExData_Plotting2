@@ -15,7 +15,7 @@ plot3 <- function() {
     geom_text(aes(label=prettyNum(x, format="f", digits=5), vjust=-.2, fontface="bold")) + 
     facet_wrap(~type) + scale_x_continuous(limits=c(1997, 2010), breaks=c(1999, 2002, 2005, 2008), labels=c(1999, 2002, 2005, 2008)) + 
     ylab("Total PM2.5 emission per source in Baltimore City (tons)") + xlab("Year") + 
-    ggtitle(expression("PM"[2.5]*" emissions in Baltimore City\n by various source types"))
+    ggtitle(expression("PM"[2.5]*paste(" emissions in Baltimore ", "City by various source types", sep="")))
   print(g)
   
   dev.print(png, file = "plot3.PNG", 
